@@ -8,7 +8,7 @@
     "build": "nest build",
     "coverage": "jest --coverage && open-cli coverage/lcov-report/index.html",
     "dev": "nest start --watch",
-    "e2e": "jest --config test/jest-e2e.json",
+    "e2e": "jest --config tests/jest-e2e.json",
     "prepare": "husky",
     "start": "node dist/main",
     "test": "jest"
