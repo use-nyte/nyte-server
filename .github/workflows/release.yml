@@ -1,0 +1,17 @@
+name: Release On GitHub
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Release
+    uses: use-nyte/.github/.github/workflows/release-github.yml@main
+    secrets: inherit

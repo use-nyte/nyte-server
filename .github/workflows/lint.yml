@@ -1,0 +1,16 @@
+name: ESLint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  packages: read
+
+jobs:
+  lint:
+    name: Lint Code
+    uses: use-nyte/.github/.github/workflows/lint-eslint.yml@main
+    secrets: inherit
