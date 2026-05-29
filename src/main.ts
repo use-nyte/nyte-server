@@ -1,13 +1,18 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
-import { ConsoleLogger } from "@nestjs/common";
+import { ConsoleLogger, Logger } from "@nestjs/common";
 
 void (async (): Promise<void> => {
   const app = await NestFactory.create(AppModule, {
     logger: new ConsoleLogger({
-      prefix: "Nyte"
+      prefix: "Nyte",
+      timestamp: true
     })
   });
 
-  await app.listen(52470);
+  const logger = new Logger("Bootstrap");
+
+  await app.listen(52470, () => {
+    logger.log("Nyte server is running on port 52470");
+  });
 })();
