@@ -7,7 +7,7 @@ void (async (): Promise<void> => {
     logger: new ConsoleLogger({
       prefix: "Nyte"
     })
-  })
+  });
 
-  await app.listen(3000);
+  await app.listen(52470);
 })();
