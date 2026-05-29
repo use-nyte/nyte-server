@@ -1,8 +1,13 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
+import { ConsoleLogger } from "@nestjs/common";
 
-async function bootstrap(): Promise<void> {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
-}
-bootstrap();
+void (async (): Promise<void> => {
+  const app = await NestFactory.create(AppModule, {
+    logger: new ConsoleLogger({
+      prefix: "Nyte"
+    })
+  })
+
+  await app.listen(3000);
+})();
