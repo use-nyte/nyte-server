@@ -1,5 +1,5 @@
 import path from "path";
-import { isPathSafe } from "../../../../src/common/utils/path.util";
+import { isPathSafe } from "@/common/utils/path.util";
 
 describe("PathUtil", () => {
   describe("isPathSafe", () => {
