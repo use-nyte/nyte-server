@@ -15,7 +15,8 @@
     "lint": "pnpm exec lint",
     "lint:fix": "pnpm exec lint --fix",
     "format:check": "pnpm exec format",
-    "format": "pnpm exec format --write"
+    "format": "pnpm exec format --write",
+    "typecheck": "tsc --noEmit --incremental false"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.24",
