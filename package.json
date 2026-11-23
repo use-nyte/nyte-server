@@ -11,7 +11,11 @@
     "e2e": "jest --config tests/jest-e2e.json",
     "prepare": "husky",
     "start": "node dist/main",
-    "test": "jest"
+    "test": "jest",
+    "lint": "pnpm exec lint",
+    "lint:fix": "pnpm exec lint --fix",
+    "format:check": "pnpm exec format",
+    "format": "pnpm exec format --write"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.24",
@@ -25,8 +29,8 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^25.9.1",
     "@types/supertest": "^7.2.0",
-    "@use-nyte/eslint-config": "^1.4.1",
-    "@use-nyte/prettier-config": "^1.3.3",
+    "@use-nyte/eslint-config": "2.0.0",
+    "@use-nyte/prettier-config": "2.0.0",
     "husky": "^9.1.7",
     "open-cli": "^9.0.0",
     "source-map-support": "^0.5.21",
@@ -51,5 +55,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "packageManager": "pnpm@12.18.0"
 }
