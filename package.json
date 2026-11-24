@@ -1,6 +1,6 @@
 {
   "name": "@use-nyte/nyte-server",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Server code for Nyte.",
   "repository": "https://github.com/use-nyte/nyte-server",
   "license": "Apache-2.0",
