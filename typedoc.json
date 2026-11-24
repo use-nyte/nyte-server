@@ -1,5 +1,6 @@
 {
   "$schema": "https://typedoc.org/schema.json",
+  "plugin": ["typedoc-plugin-markdown", "typedoc-docusaurus-theme"],
   "entryPoints": ["src"],
   "entryPointStrategy": "expand",
   "tsconfig": "tsconfig.json",
@@ -7,5 +8,8 @@
   "readme": "none",
   "exclude": ["**/*.spec.ts", "**/*.test.ts", "**/*.d.ts"],
   "excludePrivate": true,
-  "excludeInternal": true
+  "excludeInternal": true,
+  "sidebar": {
+    "autoConfiguration": false
+  }
 }
