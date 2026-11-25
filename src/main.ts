@@ -1,8 +1,15 @@
+import { ConsoleLogger, Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
-import { ConsoleLogger, Logger } from "@nestjs/common";
 
-void (async (): Promise<void> => {
+async function bootstrap(): Promise<void> {
+  const port = Number(process.env.PORT ?? "52470");
+  const host = process.env.HOST ?? "127.0.0.1";
+
+  if (!Number.isInteger(port) || port < 1 || port > 65535) {
+    throw new Error("PORT must be an integer between 1 and 65535");
+  }
+
   const app = await NestFactory.create(AppModule, {
     logger: new ConsoleLogger({
       prefix: "Nyte",
@@ -10,9 +17,17 @@ void (async (): Promise<void> => {
     })
   });
 
+  app.enableShutdownHooks();
+
+  await app.listen(port, host);
+
+  new Logger("Bootstrap").log(`Nyte Server listening on ${host}:${port}`);
+}
+
+void bootstrap().catch((error: unknown) => {
   const logger = new Logger("Bootstrap");
 
-  await app.listen(52470, () => {
-    logger.log("Nyte server is running on port 52470");
-  });
-})();
+  logger.error(error instanceof Error ? (error.stack ?? error.message) : String(error));
+
+  process.exitCode = 1;
+});
