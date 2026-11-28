@@ -1,6 +1,6 @@
 import { ConsoleLogger, Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./app.module";
+import { AppModule } from "#server/app.module";
 
 async function bootstrap(): Promise<void> {
   const port = Number(process.env.PORT ?? "52470");
@@ -24,10 +24,4 @@ async function bootstrap(): Promise<void> {
   new Logger("Bootstrap").log(`Nyte Server listening on ${host}:${port}`);
 }
 
-void bootstrap().catch((error: unknown) => {
-  const logger = new Logger("Bootstrap");
-
-  logger.error(error instanceof Error ? (error.stack ?? error.message) : String(error));
-
-  process.exitCode = 1;
-});
+await bootstrap();

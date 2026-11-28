@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "vitest",
+  "plugins": ["@stryker-mutator/typescript-checker", "@stryker-mutator/vitest-runner"],
+  "checkers": ["typescript"],
+  "coverageAnalysis": "perTest",
+  "mutate": ["src/**/*.ts"],
+  "reporters": ["clear-text", "html"],
+  "htmlReporter": {
+    "fileName": ".generated/mutation/index.html"
+  },
+  "tempDirName": ".generated/stryker-tmp",
+  "ignorePatterns": [".generated", "dist"]
+}

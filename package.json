@@ -1,69 +1,68 @@
 {
   "name": "@use-nyte/nyte-server",
   "version": "0.0.0",
-  "description": "Server code for Nyte.",
-  "repository": "https://github.com/use-nyte/nyte-server",
+  "private": true,
+  "description": "Nyte's self-hosted NestJS backend.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/use-nyte/nyte-server.git"
+  },
   "license": "Apache-2.0",
+  "type": "module",
+  "imports": {
+    "#server/*": {
+      "types": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
+  },
   "scripts": {
     "build": "nest build",
-    "coverage": "jest --coverage && open-cli coverage/lcov-report/index.html",
     "dev": "nest start --watch",
+    "docs:build": "typedoc",
+    "format": "format",
+    "format:write": "format --write",
+    "lint": "lint",
+    "lint:fix": "lint --fix",
     "prepare": "husky",
-    "start": "node dist/main",
-    "test": "pnpm run test:unit && pnpm run e2e",
-    "test:unit": "jest --runInBand",
-    "e2e": "jest --config tests/jest-e2e.json --runInBand",
-    "lint": "pnpm exec lint",
-    "lint:fix": "pnpm exec lint --fix",
-    "format": "pnpm exec format",
-    "format:write": "pnpm exec format --write",
-    "typecheck": "tsc --noEmit --incremental false",
-    "docs:build": "typedoc --options typedoc.json"
+    "start": "node dist/main.js",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "test:e2e": "vitest run --project e2e",
+    "test:mutation": "stryker run",
+    "test:unit": "vitest run --project unit",
+    "test:watch": "vitest watch",
+    "typecheck": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@nestjs/common": "11.1.24",
-    "@nestjs/core": "11.1.24",
-    "@nestjs/platform-express": "11.1.24"
+    "@nestjs/common": "12.6.3",
+    "@nestjs/core": "12.6.3",
+    "@nestjs/platform-express": "12.6.3",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
   },
   "devDependencies": {
-    "@nestjs/cli": "11.0.24",
-    "@nestjs/schematics": "11.1.0",
-    "@nestjs/testing": "11.2.12",
-    "@types/jest": "30.0.0",
-    "@types/node": "25.9.12",
+    "@nestjs/cli": "12.0.15",
+    "@nestjs/schematics": "12.0.17",
+    "@nestjs/testing": "12.6.3",
+    "@stryker-mutator/core": "10.1.1",
+    "@stryker-mutator/typescript-checker": "10.1.1",
+    "@stryker-mutator/vitest-runner": "10.1.1",
+    "@types/node": "26.6.11",
     "@types/supertest": "7.2.1",
     "@use-nyte/eslint-config": "2.1.1",
     "@use-nyte/prettier-config": "2.0.5",
+    "@vitest/coverage-v8": "5.1.2",
     "husky": "9.1.7",
-    "open-cli": "9.0.0",
-    "source-map-support": "0.5.21",
     "supertest": "7.3.2",
-    "ts-jest": "29.4.15",
-    "tsconfig-paths": "4.2.0",
     "typedoc": "0.28.20",
     "typedoc-docusaurus-theme": "1.4.3",
     "typedoc-plugin-markdown": "4.14.1",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vite": "8.4.0",
+    "vitest": "5.1.2"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "tests",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
-  },
+  "packageManager": "pnpm@12.23.0",
   "engines": {
     "node": "26.13.1"
-  },
-  "packageManager": "pnpm@12.23.0"
+  }
 }
