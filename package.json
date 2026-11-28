@@ -30,7 +30,7 @@
     "@nestjs/schematics": "11.1.0",
     "@nestjs/testing": "11.2.12",
     "@types/jest": "30.0.0",
-    "@types/node": "25.9.1",
+    "@types/node": "25.9.12",
     "@types/supertest": "7.2.1",
     "@use-nyte/eslint-config": "2.1.1",
     "@use-nyte/prettier-config": "2.0.4",
