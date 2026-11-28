@@ -15,7 +15,7 @@ permissions:
 jobs:
   ci:
     name: Node CI
-    uses: use-nyte/.github/.github/workflows/ci-node.yml@v1.2.0
+    uses: use-nyte/.github/.github/workflows/ci-node.yml@v1.3.0
     with:
       run-build: true
       run-tests: true
@@ -28,7 +28,7 @@ jobs:
     name: Request nightly images
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: ci
-    uses: use-nyte/.github/.github/workflows/dispatch-automation.yml@v1.2.0
+    uses: use-nyte/.github/.github/workflows/dispatch-automation.yml@v1.3.0
     with:
       event: component-main-updated
     secrets:
