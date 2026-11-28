@@ -21,4 +21,4 @@ jobs:
   report:
     name: Post PR CI Report
     if: ${{ github.event.workflow_run.event == 'pull_request' }}
-    uses: use-nyte/.github/.github/workflows/ci-report.yml@v1.1.1
+    uses: use-nyte/.github/.github/workflows/ci-report.yml@v1.2.0
