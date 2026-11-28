@@ -198,8 +198,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(@types/eslint@9.6.1)(prettier@3.8.3)(supports-color@8.1.1)(typescript@6.0.3)
       '@use-nyte/prettier-config':
-        specifier: ^2.0.1
-        version: 2.0.1(supports-color@8.1.1)(typescript@6.0.3)
+        specifier: ^2.0.4
+        version: 2.0.4(supports-color@8.1.1)(typescript@6.0.3)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -1235,8 +1235,8 @@ packages:
     resolution: {integrity: sha512-TNqFof8zgUhsp2dokkUrffuY5gv6Jn1YgigbJ+UkWO3mEPYlp0PGZ7zEXtLlH8PxV2OqHzdP8ImhhzIL7MAedA==, tarball: https://npm.pkg.github.com/download/@use-nyte/eslint-config/2.0.1/ef3d59959b21928a0aa32910fdcb09523bd18b75}
     hasBin: true
 
-  '@use-nyte/prettier-config@2.0.1':
-    resolution: {integrity: sha512-2KLEPAqgsRE4+mRWR6iJILPgYzbztqBEcyo6fpVGRkz0BSW4FKc12WJ9xKPPQGADUCLjX97Hyu28bLI9+xE0Aw==, tarball: https://npm.pkg.github.com/download/@use-nyte/prettier-config/2.0.1/ebb6084343f8e905e44c63c62ba199f9c30c8ecd}
+  '@use-nyte/prettier-config@2.0.4':
+    resolution: {integrity: sha512-eAEP9m8B7VsD3SGIFtFE4Q9I7bVM/v0xoa5T1wTVCSqStTMqXmRwyUSeq0qkXdtiNHxMaBgs/hcoEk0QFO3mjg==, tarball: https://npm.pkg.github.com/download/@use-nyte/prettier-config/2.0.4/9cb1c50ba819a8d7568c5869f33fe32a215202eb}
     hasBin: true
 
   '@webassemblyjs/ast@1.14.1':
@@ -5071,7 +5071,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@use-nyte/prettier-config@2.0.1(supports-color@8.1.1)(typescript@6.0.3)':
+  '@use-nyte/prettier-config@2.0.4(supports-color@8.1.1)(typescript@6.0.3)':
     dependencies:
       ignore: 5.3.2
       prettier: 3.8.3
